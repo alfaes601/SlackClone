@@ -19,7 +19,7 @@ export default Message;
 
 const MessageContainer = styled.div`
   display: flex;
-  align-items: center;
+  align-items: left;
   padding: 20px;
   > img {
     height: 50px;
@@ -27,7 +27,7 @@ const MessageContainer = styled.div`
   }
 `;
 const MessageInfo = styled.div`
-  padding-left: 1opx;
+  padding-left: 10px;
   > h4 > span {
     color: gray;
     font-weight: 300;

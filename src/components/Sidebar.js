@@ -15,17 +15,19 @@ import {
 import React from "react";
 import { useCollection } from "react-firebase-hooks/firestore";
 import styled from "styled-components";
-import { db } from "../firebase";
+import { auth, db } from "../firebase";
 import SidebarOption from "./SidebarOption";
 import { collection } from "firebase/firestore";
+import { useAuthState } from "react-firebase-hooks/auth";
 
 function Sidebar() {
+  const [user] = useAuthState(auth);
   const [channels, loading, error] = useCollection(collection(db, "rooms"));
   return (
     <SidebarContainer>
       <SidebarHeader>
         <SidebarInfo>
-          <h2>Esau Alvarez</h2>
+          <h2>{user.displayName}</h2>
           <h3>
             <FiberManualRecord />
             alfaes601
